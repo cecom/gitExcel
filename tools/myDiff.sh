@@ -16,6 +16,6 @@ tempDiffPath=`mktemp --suffix=".diff"`
 git-xl-diff.exe $@ > $tempDiffPath
 
 # get diff of cells
-C:/Tools/ExcelCompare-0.6.1/bin/excel_cmp.bat $2 $5 >> $tempDiffPath
+./tools/ExcelCompare-0.6.1/bin/excel_cmp.bat $2 $5 >> $tempDiffPath
 
 cat $tempDiffPath
