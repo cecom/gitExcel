@@ -13,7 +13,7 @@ tempDiffPath=`mktemp --suffix=".diff"`
 
 # get diff of vba stuff
 #git-xl-diff.exe $@ | sed 's/\x1b\[[0-9;]*m//g' > $tempDiffPath
-git-xl-diff.exe $@ > $tempDiffPath
+./tools/git-xl/git-xl-diff.exe $@ > $tempDiffPath
 
 # get diff of cells
 ./tools/ExcelCompare-0.6.1/bin/excel_cmp.bat $2 $5 >> $tempDiffPath
