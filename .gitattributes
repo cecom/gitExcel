@@ -2,8 +2,8 @@
 *.xlam diff=mydiff
 *.xls diff=mydiff
 *.xlsb diff=mydiff
-*.xlsm diff=mydiff
-*.xlsx diff=mydiff
+*.xlsm diff=spreadsheetcompare
+*.xlsx diff=spreadsheetcompare
 *.xlt diff=mydiff
 *.xltm diff=mydiff
 *.xltx diff=mydiff
