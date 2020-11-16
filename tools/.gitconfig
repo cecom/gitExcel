@@ -1,0 +1,15 @@
+# only sheet stuff
+[diff "excel_cmp"]
+	command = tools/ExcelCompare-0.6.1/bin/excel_cmp.bat $2 $5	
+	
+# only vba
+[diff "xl"]
+	command = tools/git-xl/git-xl-diff.exe
+
+# both	
+[diff "mydiff"]
+    command = tools/myDiff.sh	
+	
+# spreadsheetcompare
+[diff "spreadsheetcompare"]
+    command = "$(git rev-parse --show-toplevel)/tools/spreadsheetDiff.bat"
