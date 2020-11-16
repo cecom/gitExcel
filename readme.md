@@ -1,5 +1,6 @@
 # Tools
 - Sven was here!
+- Neues Feature: 17.000 als Standardwert
 
 - https://xltools.net/
   - kostet was
