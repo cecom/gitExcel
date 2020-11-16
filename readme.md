@@ -1,6 +1,7 @@
 # Tools
-- Sven was here!
-- Neues Feature: 17.000 als Standardwert
+- Spreadsheet Compare (https://support.microsoft.com/en-us/office/overview-of-spreadsheet-compare-13fafa61-62aa-451b-8674-242ce5f2c986?ui=en-us&rs=en-us&ad=us)
+  - Ist direkt von Microsoft
+  - Ist enthalten in: Office Professional Plus or Office 365 ProPlus. 
 
 - https://xltools.net/
   - kostet was
@@ -23,37 +24,22 @@
 
 
 # Vorraussetzungen
-- JDK8 muss installiert sein (für excelcompare)
+- Für excelcompare muss JDK8 installiert sein
 
 # .git/config
+einmal ausführen: `git config --local include.path ../tools/.gitconfig`
 
-Only Worksheet diff
-```
-[diff "excel_cmp"]
-	command = tools/ExcelCompare-0.6.1/bin/excel_cmp.bat $2 $5	
-```
-	
-Only VBA Diff
-```
-[diff "xl"]
-	command = git-xl-diff.exe
-```
-
-For VBA and Worksheet
-```
-[diff "mydiff"]
-    command = tools/myDiff.sh
-```
-	
 # .gitattributes
+anpassen: siehe tools/.gitconfig 
+Möglichkeiten: spreadsheetcompare | mydiff | xl | excel_cmp
 ```
-*.xla diff=mydiff
-*.xlam diff=mydiff
-*.xls diff=mydiff
-*.xlsb diff=mydiff
-*.xlsm diff=mydiff
-*.xlsx diff=mydiff
-*.xlt diff=mydiff
-*.xltm diff=mydiff
-*.xltx diff=mydiff
+*.xla diff=spreadsheetcompare
+*.xlam diff=spreadsheetcompare
+*.xls diff=spreadsheetcompare
+*.xlsb diff=spreadsheetcompare
+*.xlsm diff=spreadsheetcompare
+*.xlsx diff=spreadsheetcompare
+*.xlt diff=spreadsheetcompare
+*.xltm diff=spreadsheetcompare
+*.xltx diff=spreadsheetcompare
 ```
