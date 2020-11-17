@@ -1,15 +1,35 @@
+[diff]
+    tool = meld
+
+# spreadsheetcompare for excel compare
+[diff "excel"]
+    command = "$(git rev-parse --show-toplevel)/tools/excel/spreadsheetDiff.bat"
+
+# word diff in word
+[diff "word"]
+	command = "$(git rev-parse --show-toplevel)/tools/word/diff-word-wrapper.cmd"
+	
+[difftool]
+    prompt = false
+[difftool "meld"]
+    cmd = tools/MeldPortable/MeldPortable.exe "$LOCAL" "$REMOTE"
+
+[merge]
+    tool = meld
+[mergetool "meld"]
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+	
+#####################
+# for reference, if you dont have spreadsheetcompare
+#####################
 # only sheet stuff
 [diff "excel_cmp"]
-	command = tools/ExcelCompare-0.6.1/bin/excel_cmp.bat $2 $5	
+	command = "$(git rev-parse --show-toplevel)/tools/excel/ExcelCompare-0.6.1/bin/excel_cmp.bat" $2 $5
 	
 # only vba
 [diff "xl"]
-	command = tools/git-xl/git-xl-diff.exe
+	command = "$(git rev-parse --show-toplevel)/tools/excel/git-xl/git-xl-diff.exe"
 
-# both	
-[diff "mydiff"]
-    command = tools/myDiff.sh	
-	
-# spreadsheetcompare
-[diff "spreadsheetcompare"]
-    command = "$(git rev-parse --show-toplevel)/tools/spreadsheetDiff.bat"
+# excel_cmp and xl	
+[diff "xl_excel_cmp"]
+    command = "$(git rev-parse --show-toplevel)/tools/excel/xl_excel_cmp.sh"
